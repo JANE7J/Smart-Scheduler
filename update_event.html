@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Event - Smart Scheduler</title>
+  <style>
+    /* Footer Styling */
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Update Event</h2>
+
+  <!-- Flash Messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div>
+        {% for category, message in messages %}
+          <p class="flash-message {{ category }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Form Section -->
+  <div class="container">
+    <form method="post">
+      <label for="event_name">Event Name:</label>
+      <input type="text" id="event_name" name="event_name" value="{{ event[1] }}" required />
+
+      <label for="event_date">Event Date:</label>
+      <input type="date" id="event_date" name="event_date" value="{{ event[2] }}" required />
+
+      <label for="event_description">Description:</label>
+      <textarea id="event_description" name="event_description" required>{{ event[3] }}</textarea>
+
+      <label for="start_time">Start Time:</label>
+      <input type="time" id="start_time" name="start_time" value="{{ event[4] }}" required />
+
+      <label for="end_time">End Time:</label>
+      <input type="time" id="end_time" name="end_time" value="{{ event[5] }}" required />
+
+      <button type="submit">Update Event</button>
+    </form>
+
+    <a href="{{ url_for('view_events') }}" class="button">🔙 Back to Events</a>
+  </div>
+{% endblock %}
+
+<!-- Footer Section -->
+<footer>
+  <p>© 2025 Smart Scheduler. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+</footer>
+
+</body>
+</html>
