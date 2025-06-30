@@ -16,10 +16,10 @@ Smart Scheduler is a simple web application built with **Flask** and **MySQL**, 
 - 🎨 Responsive Frontend using HTML/CSS (with Jinja templating)
 
  🖼️ Tech Stack
-- **Backend**: Python (Flask)
-- **Database**: MySQL
-- **Frontend**: HTML, CSS, Jinja2 Templates
-- **Dependencies**:
+- Backend: Python (Flask)
+- Database: MySQL
+- Frontend: HTML, CSS, Jinja2 Templates
+- Dependencies:
   - `Flask`
   - `Flask-SQLAlchemy`
   - `Flask-Login`
@@ -103,8 +103,6 @@ Feel free to fork the repository and submit pull requests for improvements!
 This project is licensed under the [MIT License](LICENSE).
 
 ```
-
----
 
 Let me know if you want to include screenshots or a logo — I can help you format that too!
 ```
