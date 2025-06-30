@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Smart Scheduler{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <style>
+    /* Add these styles to ensure footer sticks to the bottom */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-content {
+      flex-grow: 1;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px; /* Reduced padding */
+      font-size: 1rem; /* Reduced font size */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section with Navigation -->
+  <header>
+    <nav class="navbar">
+      <ul class="nav-list">
+        <li><a href="{{ url_for('home') }}" class="nav-link">🏠 Home</a></li>
+        <li><a href="{{ url_for('view_events') }}" class="nav-link">📅 View Events</a></li>
+        <li><a href="{{ url_for('add_event') }}" class="nav-link">➕ Add Event</a></li>
+        
+        {% if 'username' in session %}
+          <li><a href="{{ url_for('logout') }}" class="nav-link logout-btn">🚪 Logout ({{ session['username'] }})</a></li>
+        {% else %}
+          <li><a href="{{ url_for('login') }}" class="nav-link">🔐 Login</a></li>
+          <li><a href="{{ url_for('register') }}" class="nav-link">📝 Register</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Flash Messages -->
+  <section class="flash-section">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="flash-message {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2025 Smart Scheduler. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a></p>
+  </footer>
+
+</body>
+</html>

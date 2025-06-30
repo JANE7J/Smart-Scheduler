@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scheduled Events - Smart Scheduler</title>
+</head>
+<body>
+    <div class="container">
+        <h1>📅 Scheduled Non-Overlapping Events</h1>
+        <nav>
+            <a href="/" class="nav-link">🏠 Home</a>
+        </nav>
+
+        {% if events %}
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>🆔 Event ID</th>
+                        <th>⏰ Start Time</th>
+                        <th>⏳ End Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                        <tr>
+                            <td>{{ event[0] }}</td>
+                            <td>{{ event[1] }}</td>
+                            <td>{{ event[2] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="no-events">🚫 No non-overlapping events found.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
