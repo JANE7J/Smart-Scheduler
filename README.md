@@ -3,14 +3,11 @@ Here’s a clean and simple `README.md` you can use for your **Smart Scheduler**
 ---
 
 ````markdown
-# 📅 Smart Scheduler
+ 📅 Smart Scheduler
 
 Smart Scheduler is a simple web application built with **Flask** and **MySQL**, designed to help users manage events and schedules efficiently. It allows users to register, log in, and perform CRUD operations (Create, Read, Update, Delete) on their events.
 
----
-
-## 🔧 Features
-
+ 🔧 Features
 - 👤 User Authentication (Register & Login)
 - ➕ Add New Events
 - 📋 View Scheduled Events
@@ -18,10 +15,7 @@ Smart Scheduler is a simple web application built with **Flask** and **MySQL**, 
 - ⏳ Countdown Timer for Upcoming Events
 - 🎨 Responsive Frontend using HTML/CSS (with Jinja templating)
 
----
-
-## 🖼️ Tech Stack
-
+ 🖼️ Tech Stack
 - **Backend**: Python (Flask)
 - **Database**: MySQL
 - **Frontend**: HTML, CSS, Jinja2 Templates
@@ -31,9 +25,7 @@ Smart Scheduler is a simple web application built with **Flask** and **MySQL**, 
   - `Flask-Login`
   - `MySQL Connector`
 
----
-
-## 🚀 Getting Started
+🚀 Getting Started
 
 ### 1. Clone the Repository
 ```bash
@@ -75,9 +67,7 @@ python app.py
 
 Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
----
-
-## 📂 Project Structure
+📂 Project Structure
 
 ```
 Smart-Scheduler/
@@ -98,23 +88,17 @@ Smart-Scheduler/
 └── README.md
 ```
 
----
-
-## ✅ To Do / Future Enhancements
+✅ To Do / Future Enhancements
 
 * Email reminders before events
 * Calendar view for events
 * Role-based access for faculty and students
 
----
-
-## 🤝 Contributing
+🤝 Contributing
 
 Feel free to fork the repository and submit pull requests for improvements!
 
----
-
-## 📃 License
+📃 License
 
 This project is licensed under the [MIT License](LICENSE).
 
