@@ -1,8 +1,6 @@
 
 
----
 
-````markdown
  📅 Smart Scheduler
 
 Smart Scheduler is a simple web application built with **Flask** and **MySQL**, designed to help users manage events and schedules efficiently. It allows users to register, log in, and perform CRUD operations (Create, Read, Update, Delete) on their events.
@@ -102,7 +100,4 @@ Feel free to fork the repository and submit pull requests for improvements!
 
 This project is licensed under the [MIT License](LICENSE).
 
-```
 
-Let me know if you want to include screenshots or a logo — I can help you format that too!
-```
