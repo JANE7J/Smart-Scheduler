@@ -1,4 +1,4 @@
-Here’s a clean and simple `README.md` you can use for your **Smart Scheduler** GitHub project:
+
 
 ---
 
